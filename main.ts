@@ -19,7 +19,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f f f f f . . . . . 
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player))
-    game.showLongText("Man I love my beautiful village! There's no place better on earth.", DialogLayout.Bottom)
 })
 effects.confetti.startScreenEffect()
 scene.setBackgroundImage(img`
