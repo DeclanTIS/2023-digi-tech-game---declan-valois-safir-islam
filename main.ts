@@ -1,4 +1,4 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     effects.confetti.endScreenEffect()
     scene.setBackgroundImage(assets.image`Village`)
     controller.moveSprite(sprites.create(img`
