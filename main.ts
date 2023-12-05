@@ -1,26 +1,3 @@
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    effects.confetti.endScreenEffect()
-    scene.setBackgroundImage(assets.image`Village`)
-    controller.moveSprite(sprites.create(img`
-        . . . . . . f f f f . . . . . . 
-        . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f e e e e e e f f f . . 
-        . . f f e 2 2 2 2 2 2 e e f . . 
-        . . f e 2 f f f f f f 2 e f . . 
-        . . f f f f e e e e f f f f . . 
-        . f f e f b f 4 4 f b f e f f . 
-        . f e e 4 1 f d d f 1 4 e e f . 
-        . . f e e d d d d d d e e f . . 
-        . . . f e e 4 4 4 4 e e f . . . 
-        . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-        . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-        . . . . . f f f f f f . . . . . 
-        . . . . . f f . . f f . . . . . 
-        `, SpriteKind.Player))
-    game.showLongText("Man I love my beautiful village! There's no place better on earth.", DialogLayout.Bottom)
-})
 effects.confetti.startScreenEffect()
 scene.setBackgroundImage(img`
     9999999999999999bbbbbb66666666b777777777777777777777777777777777777d7669999999999999999999999999bbbbbb66666666b777777777777777777777777777777777777d766999999999
@@ -145,3 +122,47 @@ scene.setBackgroundImage(img`
     9999999999999666666666666666666666666666667777777769999999999999999999999999999999999999999996666666666666666666666666666677777777699999999999999999999999999999
     `)
 music.play(music.stringPlayable("D E E G B E E D ", 130), music.PlaybackMode.UntilDone)
+effects.confetti.endScreenEffect()
+scene.setBackgroundImage(img`
+    . . . . . . f f f f . . . . . . 
+    . . . . f f f 2 2 f f f . . . . 
+    . . . f f f 2 2 2 2 f f f . . . 
+    . . f f f e e e e e e f f f . . 
+    . . f f e 2 2 2 2 2 2 e e f . . 
+    . . f e 2 f f f f f f 2 e f . . 
+    . . f f f f e e e e f f f f . . 
+    . f f e f b f 4 4 f b f e f f . 
+    . f e e 4 1 f d d f 1 4 e e f . 
+    . . f e e d d d d d d e e f . . 
+    . . . f e e 4 4 4 4 e e f . . . 
+    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f . . f f . . . . . 
+    `)
+let tiles2 = tilemap`level3`
+let Player1 = sprites.create(img`
+    . . . . . . f f f f . . . . . . 
+    . . . . f f f 2 2 f f f . . . . 
+    . . . f f f 2 2 2 2 f f f . . . 
+    . . f f f e e e e e e f f f . . 
+    . . f f e 2 2 2 2 2 2 e e f . . 
+    . . f e 2 f f f f f f 2 e f . . 
+    . . f f f f e e e e f f f f . . 
+    . f f e f b f 4 4 f b f e f f . 
+    . f e e 4 1 f d d f 1 4 e e f . 
+    . . f e e d d d d d d e e f . . 
+    . . . f e e 4 4 4 4 e e f . . . 
+    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f . . f f . . . . . 
+    `, SpriteKind.Player)
+tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass2)
+scene.setBackgroundImage(tiles.tileImageAtLocation(tiles.getTileLocation(0, 0)))
+tiles.setCurrentTilemap(tilemap`level2`)
+Player1.setPosition(10, 16)
+controller.moveSprite(Player1)
+game.showLongText("Man I love my beautiful village! There's no place better on earth.", DialogLayout.Bottom)
