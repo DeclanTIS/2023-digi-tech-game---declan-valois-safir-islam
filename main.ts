@@ -163,6 +163,7 @@ let Player1 = sprites.create(img`
 tiles.setTileAt(tiles.getTileLocation(0, 0), sprites.castle.tileGrass2)
 scene.setBackgroundImage(tiles.tileImageAtLocation(tiles.getTileLocation(0, 0)))
 tiles.setCurrentTilemap(tilemap`level2`)
+scene.cameraFollowSprite(Player1)
 Player1.setPosition(10, 16)
 controller.moveSprite(Player1)
 game.showLongText("Man I love my beautiful village! There's no place better on earth.", DialogLayout.Bottom)
